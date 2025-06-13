@@ -60,7 +60,15 @@ export const FunctionBadge = Node.create<FunctionBadgeOptions>({
         find: regex,
         handler: ({ match, chain, range }) => {
           const id = match?.[1]
-          if (!id) return
+          if (!id) {
+            chain()
+              .insertContentAt(range, {
+                type: this.name,
+                attrs: { id: 'not-found' },
+              })
+              .run()
+            return
+          }
           chain()
             .insertContentAt(range, {
               type: this.name,
