@@ -26,6 +26,11 @@ export function EditorWindow() {
         bulletList: false,
         orderedList: false,
         listItem: false,
+        code: {
+          HTMLAttributes: {
+            class: 'inline-code',
+          },
+        },
       }), 
       Placeholder.configure({ placeholder: "Type something..." }),
       CodeBlock,
