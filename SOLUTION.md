@@ -1,81 +1,89 @@
-# SOLUTION.md
+# AI Script Builder - Technical Solution
 
-## Editor Stack Choice and Why
+## Overview
+Hey everyone! I'm excited to submit this project to the Hatch team. 
+Below is an outline for running the application locally and kick off the test suite.
 
-**Stack:**
-- **React**: For component-based UI and state management.
-- **TypeScript**: For type safety and maintainability.
-- **Tiptap**: As the core rich text editor, chosen for its extensibility, ProseMirror foundation, and strong React integration.
-- **TailwindCSS**: For rapid, consistent, and utility-first styling.
-- **shadcn/ui & Radix**: For accessible, headless UI primitives (popover, tooltip, etc.).
+This project implements a rich text editor with markdown support, featuring interactive function badges and slash commands. The solution prioritizes user experience while maintaining clean, maintainable code.
 
-**Why this stack?**
-- I was debating between TipTap, Slate and Lexical. I paroused the community to gather some information. These were some articles that helped me gather some information:
-- https://www.reddit.com/r/reactjs/comments/1i7rp5d/slatejs_vs_lexical_vs_anything_else/
-- https://liveblocks.io/blog/which-rich-text-editor-framework-should-you-choose-in-2025
-- https://news.ycombinator.com/item?id=31814983
+## Tech Stack & Architecture
 
-- I ultimately went with TipTap as I found it the easiest to get up and running while still being robust enough for me to complete all of the tasks. 
-- I'm concerned that it does have a layer of abstraction (built ontop of ProseMirror) but for this project it is plenty adequate. 
-- I did work with Slate and tested out some of it's functionality and was pretty impressed with how easy it was to create my own short cuts and customize how the Markdown worked. Ultimately though, I found that it would require too much time to dive into how it worked with nodes to get a working example. 
+### Core Technologies
+- **React + TypeScript**: For type-safe, component-based UI development
+- **TipTap**: A headless editor framework providing extensible rich text editing
+- **TailwindCSS**: For utility-first styling
+- **shadcn/ui**: For accessible, customizable UI components
 
----
+### Key Features
+- Rich text editing with markdown support
+- Interactive function badges with keyboard navigation
+- Slash command menu for quick actions
+- Bidirectional markdown conversion
+- Responsive and accessible UI
 
-## Trade-offs Made
-
-- **Tiptap vs. Other Markdown Editors**: Tiptap is heavier than a simple markdown-to-HTML renderer, but it enables rich interactivity (badges, slash commands, etc.). 
-- **Custom Extensions**: Writing custom Tiptap extensions (for badges, slash commands) adds complexity, but is necessary for the required features.
-- **Mode Switching**: Using a textarea for markdown mode means no live preview, but keeps the implementation simple and clear. 
-
----
-
-## How to Run the Project Locally
+## Getting Started
 
 1. **Install dependencies:**
    ```sh
    npm install
    ```
-2. **Start the dev server:**
+
+2. **Start the development server:**
    ```sh
    npm run dev
    ```
+
 3. **Open your browser:**
-   Go to [http://localhost:5173](http://localhost:5173) (or the port shown in your terminal).
+   Navigate to [http://localhost:5173](http://localhost:5173)
 
 4. **Run tests:** 
    ```sh
    npm run test
    ```
 
-
----
-
-## What's Working and What's Not (Why?)
+## Implementation Details
 
 ### What's Working
-- ✅ **Rich Markdown Rendering:** Headings, lists, code, blockquotes, etc. render and edit as expected.
-- ✅ **Function Badges:** Placeholders are replaced with interactive badges; badges can be changed or deleted via dropdown.
-- ✅ **Slash Commands:** Typing `/` in the editor opens a keyboard-accessible command menu.
-- ✅ **Round-trip Markdown:** Load → Edit → Serialize → Load again preserves structure and badges.
-- ✅ **Mode Switching:** Toggle between markdown editing and rich preview.
+- ✅ **Rich Markdown Rendering:** Full support for headings, lists, code blocks, and blockquotes
+- ✅ **Function Badges:** Interactive badges with tooltips, dropdown selection, and deletion
+- ✅ **Slash Commands:** Keyboard-accessible command menu with function insertion
+- ✅ **Round-trip Markdown:** Preserves formatting and badges through serialization
+- ✅ **Mode Switching:** Seamless toggle between markdown and rich text editing
 
-### What's Not (or could be improved)
-- **Live Markdown Preview:** Markdown mode is plain text only; no live preview side-by-side.
-- **Performance:** For very large documents, performance could be further optimized.
+### Areas for Improvement
+- **Live Markdown Preview:** Could add a split view for real-time markdown rendering
+- **Performance Optimization:** Further optimization for large documents
+- **Error Handling:** More robust error states and user feedback
+- **UI Enhancements:** Replace confirmation dialogs with modal dialogs
+- **Placeholder Text:** Add visual indicators for selected block types
+
+## Trade-offs & Decisions
+
+1. **TipTap vs ProseMirror:**
+   - Chose TipTap for its React integration and extension system
+   - Trade-off: Less direct control over the editor core. A level of abstraction. 
+   - **Alternative Editors Considered:**
+      - Looked into Slate and Lexical but ultimately went with TipTap.
+      - https://www.reddit.com/r/reactjs/comments/1i7rp5d/slatejs_vs_lexical_vs_anything_else/
+      - https://liveblocks.io/blog/which-rich-text-editor-framework-should-you-choose-in-2025
+      - https://news.ycombinator.com/item?id=31814983
+
+## Future Enhancements
+
+1. **Performance:**
+   - Implement virtual scrolling for large documents
+   - Add code splitting for better load times
+
+2. **Features:**
+   - Add collaborative editing support
+   - Implement custom function badge types
+   - Add more keyboard shortcuts
+
+3. **Developer Experience:**
+   - Add more comprehensive testing
+   - Improve documentation
+   - Add storybook for component development
 
 ---
 
-## Anything I'd Improve With More Time
-- **Live Markdown Preview:** Add a split view to show live rendered markdown alongside the textarea.
-- **More Customization:** Add more customization for users to define their own slash commands or badge types. 
-- **Testing:** Add more unit and integration tests for custom extensions and components.
-- **Performance:** Profile and optimize for large documents and complex badge usage.
-- **Edge Case Handling:** Some error states (e.g., missing function spec) are handled simply.
-- **Deleting Functions:** Should use Shad Dialogs instead of JS confirmation dialogs
-- **Toast Message:** After deletion, display a toast message
-- **Text Placeholders:** When selecting h1, bullets, paragraphs, it would look better to have a placeholder that displays what is selected on the screen. (This is typical in Notion)
-- **Documentation:** Add more inline comments and developer docs for maintainability.
-
----
-
-**Thank you for reviewing this solution!** 
+*Thank you for reviewing my solution. I'm excited to discuss the implementation!* 
