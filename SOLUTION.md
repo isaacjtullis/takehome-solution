@@ -2,8 +2,10 @@
 
 ## Overview
 Hey everyone! I'm excited to submit this project to the Hatch team. 
-Below is an outline for running the application locally and kick off the test suite.
+Below is an outline for running the application locally and kicking off the test suite.
 
+
+## Summary
 This project implements a rich text editor with markdown support, featuring interactive function badges and slash commands. The solution prioritizes user experience while maintaining clean, maintainable code.
 
 ## Tech Stack & Architecture
