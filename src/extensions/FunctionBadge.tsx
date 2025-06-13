@@ -1,5 +1,5 @@
 // extensions/FunctionBadge.ts
-import { Node, mergeAttributes, type NodeConfig } from '@tiptap/core'
+import { Node, mergeAttributes } from '@tiptap/core'
 import { ReactNodeViewRenderer } from '@tiptap/react'
 import FunctionBadgeComponent from '@/components/FunctionBadgeComponent'
 
@@ -53,7 +53,7 @@ export const FunctionBadge = Node.create<FunctionBadgeOptions>({
   },
 
   addInputRules() {
-    const regex = this.options.inputRegex
+    const regex = this.options.inputRegex || /<% function ([a-zA-Z0-9-]+) %>/
 
     return [
       {

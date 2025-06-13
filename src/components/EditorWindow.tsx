@@ -6,6 +6,7 @@ import BulletList from '@tiptap/extension-bullet-list'
 import { Markdown } from 'tiptap-markdown'
 import { FunctionBadge } from "@/extensions/FunctionBadge";
 import { SlashCommand } from "@/extensions/SlashCommand";
+import CodeBlock from '@tiptap/extension-code-block'
 
 import Placeholder from "@tiptap/extension-placeholder";
 import { useEditor, EditorContent } from "@tiptap/react";
@@ -26,6 +27,7 @@ export function EditorWindow() {
         listItem: false,
       }), 
       Placeholder.configure({ placeholder: "Type something..." }),
+      CodeBlock,
       BulletList.configure({
         HTMLAttributes: {
           class: 'bullet-list',

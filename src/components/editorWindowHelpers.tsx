@@ -1,4 +1,3 @@
-import { useCallback } from "react";
 export const SAMPLE_SCRIPT = `# ExampleCo Home Solutions – Sample Call Script
 
 You're a customer service representative speaking on the phone.

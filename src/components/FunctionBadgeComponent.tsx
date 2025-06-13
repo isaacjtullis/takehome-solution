@@ -1,5 +1,5 @@
 // components/FunctionBadgeComponent.tsx
-import React, { useRef } from 'react'
+import { useRef } from 'react'
 import { NodeViewWrapper } from '@tiptap/react'
 import type { NodeViewProps } from '@tiptap/react'
 import { functionSpecs } from '@/data'

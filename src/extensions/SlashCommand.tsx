@@ -119,7 +119,7 @@ class SlashCommandRenderer {
     }
 
     if (event.key === 'Escape') {
-      this.popup?.hide()
+      this.onExit()
       return true
     }
 
@@ -151,7 +151,7 @@ export const SlashCommand = Extension.create({
       suggestion: {
         char: '/',
         startOfLine: true,
-        items: ({ editor }: { editor: Editor }) => defaultCommands,
+        items: () => defaultCommands,
         render: () => {
           const renderer = new SlashCommandRenderer()
           return {
