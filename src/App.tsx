@@ -1,6 +1,6 @@
 import { Header } from "@/components/Header";
 import { EditorHeader } from "@/components/EditorHeader";
-import { Editor } from "@/components/Editor";
+import { EditorWindow } from "@/components/EditorWindow";
 
 export default function App() {
   return (
@@ -9,9 +9,9 @@ export default function App() {
 
       {/* Editor Section */}
       <section className="py-8 px-4">
-        <div className="max-w-4xl mx-auto">
+        <div className="max-w-5xl mx-auto">
           <EditorHeader />
-          <Editor />
+          <EditorWindow />
         </div>
       </section>
     </div>
