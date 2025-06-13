@@ -72,19 +72,11 @@ This project implements a rich text editor with markdown support, featuring inte
 
 ## Future Enhancements
 
-1. **Performance:**
-   - Implement virtual scrolling for large documents
-   - Add code splitting for better load times
-
-2. **Features:**
-   - Add collaborative editing support
-   - Implement custom function badge types
-   - Add more keyboard shortcuts
-
-3. **Developer Experience:**
-   - Add more comprehensive testing
-   - Improve documentation
-   - Add storybook for component development
+- Improve UI (add in toaster messages when deleting functions, have a split pane where you can see the markdown in real time when in preview)
+- Improve tests and improve test coverage
+- Add in editor panel so a user unfamiliar with markdown and keyboard shortcuts can select making text bold, underlined, h1 tags etc...
+- Improve mapping to functions and making this more robust
+- Improve edge cases for functions
 
 ---
 
