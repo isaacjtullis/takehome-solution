@@ -17,8 +17,7 @@
 
 - I ultimately went with TipTap as I found it the easiest to get up and running while still being robust enough for me to complete all of the tasks. 
 - I'm concerned that it does have a layer of abstraction (built ontop of ProseMirror) but for this project it is plenty adequate. 
-- I did work with Slate and tested out some of it's functionality and was pretty impressed with how easy it was to create my own short cuts and customize how the Markdown worked.
-- Ultimately though, I found that it would require too much time to dive into how it worked with nodes to get a working example. 
+- I did work with Slate and tested out some of it's functionality and was pretty impressed with how easy it was to create my own short cuts and customize how the Markdown worked. Ultimately though, I found that it would require too much time to dive into how it worked with nodes to get a working example. 
 
 ---
 
@@ -68,8 +67,8 @@
 
 ## Anything I'd Improve With More Time
 - **Live Markdown Preview:** Add a split view to show live rendered markdown alongside the textarea.
-- **More Customization:** Allow users to define their own slash commands or badge types. 
-- **Testing:** Add unit and integration tests for custom extensions and components.
+- **More Customization:** Add more customization for users to define their own slash commands or badge types. 
+- **Testing:** Add more unit and integration tests for custom extensions and components.
 - **Performance:** Profile and optimize for large documents and complex badge usage.
 - **Edge Case Handling:** Some error states (e.g., missing function spec) are handled simply.
 - **Deleting Functions:** Should use Shad Dialogs instead of JS confirmation dialogs
