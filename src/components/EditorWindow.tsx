@@ -7,6 +7,7 @@ import { Markdown } from 'tiptap-markdown'
 import { FunctionBadge } from "@/extensions/FunctionBadge";
 import { SlashCommand } from "@/extensions/SlashCommand";
 import CodeBlock from '@tiptap/extension-code-block'
+import Underline from '@tiptap/extension-underline'
 
 import Placeholder from "@tiptap/extension-placeholder";
 import { useEditor, EditorContent } from "@tiptap/react";
@@ -46,6 +47,7 @@ export function EditorWindow() {
       Markdown,
       FunctionBadge,
       SlashCommand,
+      Underline,
     ],
 
     content: preprocessMarkdown(markdownText),

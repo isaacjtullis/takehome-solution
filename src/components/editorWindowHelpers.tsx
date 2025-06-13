@@ -55,13 +55,21 @@ End with:
 
 
 export const preprocessMarkdown = (markdown: string): string => {
-	return markdown.replace(/<% function ([a-zA-Z0-9-]+) %>/g, (_, id) => {
+	return markdown
+		.replace(/<% function ([a-zA-Z0-9-]+) %>/g, (_, id) => {
 			return `<function-badge id="${id}"></function-badge>`
-	})
+		})
+		.replace(/<u>(.*?)<\/u>/g, (_, text) => {
+			return `<u>${text}</u>`
+		})
 };
 
 export const postprocessMarkdown = (htmlLikeMarkdown: string): string => {
-	return htmlLikeMarkdown.replace(/<function-badge id="(.*?)"><\/function-badge>/g, (_, id) => {
-		return `<% function ${id} %>`
-	})
+	return htmlLikeMarkdown
+		.replace(/<function-badge id="(.*?)"><\/function-badge>/g, (_, id) => {
+			return `<% function ${id} %>`
+		})
+		.replace(/<u>(.*?)<\/u>/g, (_, text) => {
+			return `<u>${text}</u>`
+		})
 };
