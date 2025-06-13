@@ -15,6 +15,19 @@ This project implements a rich text editor with markdown support, featuring inte
 - **TipTap**: A headless editor framework providing extensible rich text editing
 - **TailwindCSS**: For utility-first styling
 - **shadcn/ui**: For accessible, customizable UI components
+- **vitest + react-testing-library**: For testing purposes
+
+### Dependencies & Why They Were Chosen
+- **TipTap & Extensions** (`@tiptap/core`, `@tiptap/react`, `@tiptap/starter-kit`):
+  - Chosen for its React integration and extensible architecture
+  - Provides a solid foundation for rich text editing
+  - Easy to customize and extend with custom nodes and commands
+  - Built on ProseMirror, which is battle-tested in production
+
+- **tiptap-markdown**:
+  - Handles bidirectional conversion between markdown and rich text
+  - Provides storage API for markdown serialization
+  - Maintains formatting during round-trip conversion
 
 ### Key Features
 - Rich text editing with markdown support
@@ -62,7 +75,7 @@ This project implements a rich text editor with markdown support, featuring inte
 ## Trade-offs & Decisions
 
 1. **TipTap vs ProseMirror:**
-   - Chose TipTap for its React integration and extension system
+   - Chose TipTap for its React integration and extension system. 
    - Trade-off: Less direct control over the editor core. A level of abstraction. 
    - **Alternative Editors Considered:**
       - Looked into Slate and Lexical but ultimately went with TipTap.
